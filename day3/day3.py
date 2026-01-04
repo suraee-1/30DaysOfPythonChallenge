@@ -145,3 +145,88 @@ print("Equilidian distance : ", equilidan_distance)
 # comparing slopess
 print("y>slope :", y>slope)
 print("y<slope :",y<slope)
+
+#Calculate the value of y (y = x^2 + 6x + 9). Try to use different x values and figure out at what x value y is going to be 0
+x = -3
+y =x ** 2+(6*x)+9
+print(y)
+ 
+ #Find the length of 'python' and 'dragon' and make a falsy comparison statement.
+length_of_python = len("python")
+length_of_dragon =len("dragon")
+print("Length of python not equal to length of dragon : ",length_of_python != length_of_dragon)
+
+#Use and operator to check if 'on' is found in both 'python' and 'dragon'
+
+print("If on is present  both in 'python' and 'dragon' : ","on" in "python" and "on" in "dragon")
+
+#I hope this course is not full of jargon. Use in operator to check if jargon is in the sentence.
+
+print("I hope this course is not full of jargon :" , "jargon" in "I hope this course is not full of jargon" )
+
+#There is no 'on' in both dragon and python
+
+print("There is no 'on' in both dragon and python : ",not "on" in "dragon" and not "on" in "python")
+print("\n\n")
+#Find the length of the text python and convert the value to float and convert it to string
+
+
+text ="Yfjasfjaj"
+length_of_text = len(text)
+text_in_float = float(length_of_text)
+length_of_text_to_original_type= str(text_in_float)
+print("Text : ",type(text))
+print("length of text" ,type(length_of_text))
+print("text in float",type(text_in_float))
+print("length of text to original type :",type(length_of_text_to_original_type))
+
+#Even numbers are divisible by 2 and the remainder is zero. How do you check if a number is even or not using python?
+
+num = 10
+print("No is even if num %2 == 0" ,num%2==0)
+
+#Check if the floor division of 7 by 3 is equal to the int converted value of 2.7.
+
+div = 7//3
+print(div)
+num = 2.7
+num_int = int(num)
+print("the floor division of 7 by 3 is equal to the int converted value of 2.7",div == num_int)
+
+#Check if type of '10' is equal to type of 10
+
+print("Type of '10' is equal to type of 10 : ",type("10") == type(10))
+
+#Check if int('9.8') is equal to 10
+
+print("is int('9.8') is equal to 10", 9.8 ==10)
+
+# Writ a script that prompts the user to enter hours and rate per hour. Calculate weekly pay of the person?
+
+hours = int(input("Enter hours : "))
+rate = float(input("Rate per hour : "))
+weekly_pay = hours * rate * 7
+print("Weekly pay" ,weekly_pay)
+
+#Write a script that prompts the user to enter number of years. Calculate the number of seconds a person can live. Assume a person can live hundred years
+
+no_of_years = int(input("Enter no of years : "))
+no_of_seconds = 60*60*24*365 *no_of_years
+print("You have lived for ",no_of_seconds)
+
+# print the following pattern
+'''
+1 1 1 1 1
+2 1 2 4 8
+3 1 3 9 27
+4 1 4 16 64
+5 1 5 25 125
+'''
+
+print('''
+      1 1 1 1 1
+      2 1 2 4 8
+      3 1 3 9 27
+      4 1 4 16 64
+      5 1 5 25 125
+''')
