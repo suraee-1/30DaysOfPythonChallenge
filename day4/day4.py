@@ -56,49 +56,57 @@ print("The radius of the circle is %.3f and the age variable is %a age"%(radius,
 
 print("The radius of the circle is {}, and age of a person is {}".format(radius,age))
 
-# Exercises 
-
-#Concatenate the string 'Thirty', 'Days', 'Of', 'Python' to a single string, 'Thirty Days Of Python'.
-
-a ="Thirty"
-b ="Days"
-c ="Of"
-d ="Python"
-space=" "
-sentence = a+space+b+space+c+space+d
-print(sentence)
-
-# Concatenate the string 'Coding', 'For' , 'All' to a single string, 'Coding For All'.
-string_coding= "Coding"
-string_for ="For"
-string_all ="All"
-
-sentence3 = string_coding+ space +string_for + space + string_all
-print(sentence3)
-
-#Declare a variable named company and assign it to an initial value "Coding For All".
+# unpacking character
+language = "Python"
+a,b,c,d,e,f =language # if variables > len(str) -> Value Error
+print(a)
+print(b)
+print(c)
+print(d)
+print(e)
+print(f)
 print("\n\n")
-company = "Coding For All! enjoy"
-#Print the variable company using print().
-print(company)
-
-#Print the length of the company string using len() method and print().
+# Accessing character of a string by Index from left side
+print(language[0])
+print(language[1])
+print(language[2])
+print(language[3])
+print(language[4])
+print(language[5])
 print("\n\n")
-length_of_string_company = len(company)
-print(length_of_string_company)
 
-#Change all the characters to uppercase letters using upper() method.
+#Accssing characters of a string by Right side
+print(language[-1])
+print(language[-2])
+print(language[-3])
+print(language[-4])
+print(language[-5])
+print(language[-6])
+#print(language[-7]) # index error
+print("\n\n")
 
-print(company.upper())
+#slicing a string in python
 
-#change all the characters to lowercase letter using lower() method.
+language = "Python"
+first_three_characters = language[0:3] # includes first character but excludes last cahracter
+print(first_three_characters)
+last_three_characters = language[3:6]
+print(last_three_characters)
+last_four_characters = language[-4::] # start at minus 4 go till end 
+print(last_four_characters)
 
-print(company.lower())
+#reverse a string
+greeting = "Hello world"
+print(greeting[::-1])
 
-#Use capitalize(), title(), swapcase() methods to format the value of the string Coding For All.
+#skipping characters while slicing
 
-print(company.capitalize())
-print(company.title())
-print(company.swapcase())
- 
-#Cut(slice) out the first word of Coding For All string.
+language ="Javascript" #Jvsrp
+print(language[0:11:2])
+
+#capitalize function
+
+name ="harley winston"
+print(name.capitalize()) # capitalizes first word of the string
+
+# counts the  occurance of a sub string 
