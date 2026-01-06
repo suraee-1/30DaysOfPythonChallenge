@@ -110,3 +110,67 @@ name ="harley winston"
 print(name.capitalize()) # capitalizes first word of the string
 
 # counts the  occurance of a sub string 
+sentence = "I m loving coding in Python for thirty days"
+print(sentence.count("o",0,4))
+print(sentence.count("th",0,))
+
+# checking if a string ends with something
+print("Ending with on :",sentence.endswith("on"))
+print("Ending with ys : ",sentence.endswith("ys"))
+
+#increase tab sizes
+sentence = "I m \tloving coding with python"
+print(sentence)
+print(sentence.expandtabs(15)) # increase tab spacing
+
+#finding something in a  string 
+print(sentence.find("python")) # returns -1 if not found
+print(len(sentence))
+
+# finding the last occurance of a word in python # rfind
+print(sentence.rfind("i"))
+
+# fomating a string
+
+first_name ="James"
+last_name ="Wilson"
+age = 30
+job ="entreprenuer"
+print("My name is {} {}.I am {} and I work as a {}".format(first_name,last_name,age,job))
+
+#.index method returns the lowest index of a string
+items = " tv , fridge , iron , oven"
+print(items.index(','))
+
+# .rindex method returns the highes index when an item in found
+print(items.rindex(","))
+
+# checks for alpha and num
+print(("IsaphaNumeric12").isalnum())
+print("Is not a alpha numeric" ,"not".isalnum())
+# checks for num
+words = "1234"
+print(words.isnumeric())
+# checks for alphabets
+words ="adsad"
+print(words.isalpha())
+
+#isdecimal - checks if a string contains only decimal i.e. 0 to 9
+numbers ="1223 4"
+print(numbers.isdecimal())
+
+#isdigit - checks if a string is a digit
+age ="_290"
+print(age.isdigit())
+
+#isIdentifier -checks if a string is a identifier
+print(age.isidentifier())
+
+#islower 
+words ="apple"
+print(words.islower())
+
+#isUpper
+words = "APPLE"
+print(words.isupper())
+
