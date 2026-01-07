@@ -174,3 +174,35 @@ print(words.islower())
 words = "APPLE"
 print(words.isupper())
 
+#join returns a contatenated string
+web_tech = ["Html" ,"Css","Javascript"]
+result =  " ".join(web_tech)
+print(result)
+result1 = "#".join(web_tech)
+print(result1)
+
+#strip -removes all words from starting and ending of a word
+challenge ="thirty days of pythooon"
+print(challenge)
+print(challenge.strip("noth"))
+
+#replace - replaces a value with a given value
+challenge = "thirty days of python"
+print(challenge.replace("t","c"))
+
+#split - replaces a string
+challenge = "thirty,days,of,python"
+challenge = challenge.split(",")
+
+print(challenge)
+# Title - make the string title case
+challenge ="thirty days of python"
+print(challenge.title())
+
+# swapcase - swaps the case of the string
+challenge ="ThIrty"
+print(challenge.swapcase())
+
+# startswith -checks wheater a str stats with some str
+print(challenge.startswith("T")) # case sensitive
+
