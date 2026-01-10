@@ -78,3 +78,15 @@ print(fruits)
 #remove an item from a list
 fruits.remove("Apple")
 print(fruits)
+
+# remove a item
+lst = ["item1","item2"]
+lst.remove("item1")
+print(lst)
+
+# remove items using pop
+print(fruits)
+fruits.pop() # if no index is specified last item is removed
+print(fruits)
+fruits.pop(0)
+print(fruits)
