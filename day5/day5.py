@@ -90,3 +90,66 @@ fruits.pop() # if no index is specified last item is removed
 print(fruits)
 fruits.pop(0)
 print(fruits)
+
+# deleting items using del keyword
+print(fruits)
+del(fruits[0])
+print(fruits)
+del(fruits)
+print("\n\n")
+
+fruits = ['banana', 'orange', 'mango', 'lemon', 'kiwi', 'lime']
+print(fruits)
+del(fruits[0])
+print(fruits)
+del(fruits[1])
+print(fruits)
+del(fruits[1:3])
+print(fruits)
+del(fruits)
+#print(fruits)
+
+# clear method empties the list
+fruits =["apples" ,"banana"]
+print(fruits)
+fruits.clear()
+print(fruits)
+print("\n\n")
+#coping a list
+fruits = ["Apple","Banana" ,"Lime","Orange"]
+print(fruits)
+fruits_copy =fruits.copy()
+print(fruits_copy)
+print("\n\n\n")
+# joining a list  with + => creates a new list
+zero = [0]
+positive_numbers = [1,2,3,4,5,6,7,8,9,10]
+negative_numbers =[-1,-2,-3,-4,-5,-6,-7,-8,-9,-10]
+integers = negative_numbers + zero +positive_numbers
+print(integers)
+# using extend
+negative_numbers.extend(zero)
+print(negative_numbers)
+negative_numbers.extend(positive_numbers)
+print(negative_numbers)
+# count
+fruits = ['banana', 'orange', 'mango', 'lemon',"banana"]
+print(fruits.count("banana"))
+# finding index of an item
+print(fruits.index("orange"))
+print(fruits.index("banana")) # prints first occurance only
+print("\n\n")
+#reverse a list
+print(fruits)
+fruits.reverse()
+print(fruits)
+# sorting a list 
+fruits.sort()
+print(fruits)
+#numbers.sort
+numbers = [121323210,12,2734,2323]
+print(numbers)
+numbers.sort()
+print(numbers)
+numbers.sort(reverse= True)
+print(numbers)
