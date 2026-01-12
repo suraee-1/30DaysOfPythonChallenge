@@ -346,3 +346,6 @@ print(contries_first_half)
 print(countries_second_half)
 
 #['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']. Unpack the first three countries and the rest as scandic countries.
+new_countries = ["China","Russia","USA","Finland","Sweden","Norway","Denmark"]
+china,russia,usa, *scandic_countries = new_countries
+print(scandic_countries)
