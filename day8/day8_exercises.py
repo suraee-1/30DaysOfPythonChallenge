@@ -16,8 +16,8 @@ dog ={}
 dog["name"] = "Shiro"
 dog["color"] = "black"
 dog["breed"] ="street"
-dog["legs"] =4
-dog["age"] =4
+dog["legs"] = 4
+dog["age"] = 4
 
 student ={"first_name":"John",
           "last_name" : "Smith",
