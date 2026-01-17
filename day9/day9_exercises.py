@@ -127,7 +127,7 @@ person={
 # * Check if the person dictionary has skills key, if so print out the middle skill in the skills list.
 
 if "skills" in person:
-    print(person["skills"][2])
+    print(person["skills"][len(person["skills"])//2])
 
 #Check if the person dictionary has skills key, 
 # if so check if the person has 'Python' skill and print out the result.
