@@ -78,10 +78,48 @@ for number in numbers:
         break
 
 print("\n\n\n")
+numbers = (0,1,2,3,4,5)
 for number in numbers:
     print(number)
-    number+=1
     if number ==3:
         continue
     print("The next number should be ",number+1) if number !=5 else print("loop ends")
 print("outside the loop")
+
+# range function - returns a list of numbers
+#The range(start, end, step) takes three parameters: starting, ending and increment. By default it starts from 0 and the increment is 1.
+lst = list(range(10)) #last number is excluded
+print(lst)
+
+st = set(range(1,11))
+print(st)
+
+lst = list(range(0,11,2))
+print(lst) # print a list increments with 2
+
+lst = list(range(11,0,-1)) # for backword list 
+print(lst)
+
+for number in range(11):
+    print(number)
+
+person = {
+    "name" : "Xan",
+    "city" : "Sili",
+    "skills" : ["python","html","css","javascript","git"]
+}
+print("\n\n")
+for key in person:
+    if key == "skills":
+        for skill in person["skills"]:
+            print(skill)
+# for else
+
+for i in range(0,11,1):
+    print(i)
+else :
+    print("loop ends at ",i)
+
+for number in range(0,11,1):
+    ... # works as place holders for future statements
+    pass 
