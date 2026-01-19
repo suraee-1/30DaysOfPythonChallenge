@@ -332,18 +332,24 @@ print(reversed_fruits)
 
 from data.countries_data import countries_list
 
-lang = list()
+# total number of languages in the data
+languages = []
+for lang in countries_list:
+     languages.extend(lang["languages"])
 
-for country in countries_list:
-     lang.extend(country["languages"])
-     
-unique_lang =set(lang)
-print(unique_lang)
-print(f"Total no of languages in the data is : {len(unique_lang)}")
+unique_languages = set(languages)
+print(f"Total number of languages is {len(unique_languages)} ")
 
-# the ten most spoken languages
+# Find the ten most spoken languages from the data
+
 from collections import Counter
-count = Counter(lang)
-print(count)
+lang_counter = Counter(languages)
+ten_most_spoken = lang_counter.most_common(10)
+print(ten_most_spoken)
 
-top_10 = count.most_common(10)
+# Find the 10 most populated countries in the world
+
+top_10 = sorted(countries_list,key = lambda x:x["population"],reverse=True)[:10]
+
+for country in top_10:
+     print(country["name"],country["population"])
