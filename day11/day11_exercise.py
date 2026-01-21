@@ -177,3 +177,45 @@ def sum_of_even(numbers):
             total+=number
     return total
 print(sum_of_even(10))
+
+# level 2
+#Declare a function named evens_and_odds . 
+# It takes a positive integer as parameter and it counts number of evens and odds in the number.
+def evens_and_odds(number):
+    even = 0
+    odd = 0
+
+    for num in range(number+1):
+       if num%2 == 0:
+         even+=1
+       else:
+           odd+=1
+
+    return (f"The number of even numbers is {even},\nThe number if odd numbers is {odd}.")
+print("\n")
+print(evens_and_odds(100))
+
+#Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+def factorial(num):
+    total = 1
+    for number in range(1,num+1):
+        total*=number
+    return total
+print(factorial(5))
+
+#Call your function is_empty, it takes a parameter and it checks if it is empty or not
+def is_empty(item):
+    if not item :
+        return True
+    return False
+print(is_empty("na"))
+
+#Write different functions which take lists. They should calculate_mean, 
+# calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
+
+def satistics(lst):
+    total = 0
+    for i in lst:
+        total+=i
+    mean = total/len(lst)
+    median = len(lst)/
