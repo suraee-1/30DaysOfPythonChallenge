@@ -212,10 +212,68 @@ print(is_empty("na"))
 
 #Write different functions which take lists. They should calculate_mean, 
 # calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
+from collections import Counter
 
-def satistics(lst):
+def statistics(lst):
+    
+    if is_empty(lst):
+        return "No items exits"
+    values = {}
+    values["mean"] =calculate_mean(lst)
+    values["mod"] = calculate_mod(lst)
+    values["cal_range"] = calculate_range(lst)
+    values["variance"] = f"{calculate_variance(lst):3f}"
+    values["std"] = f"{cal_standart_dev(lst):3f}"
+    return values
+
+
+def calculate_mean(lst):
     total = 0
     for i in lst:
         total+=i
-    mean = total/len(lst)
-    median = len(lst)/
+    return total/len(lst)
+
+def calculate_mod (lst):
+    mod = max(lst,key=lst.count) # got this method from stack overflow
+    return mod
+
+def calculate_range(lst):
+    min_value =min(lst)
+    max_value = max(lst)
+    return max_value -min_value
+
+def calculate_variance(lst):
+    squared_difference=calculate_squared_difference(lst)
+    variance = squared_difference/len(lst)
+    return variance
+
+def calculate_squared_difference(lst):
+    mean = calculate_mean(lst)
+    total_squared_difference = 0
+    for i in lst:
+        total_squared_difference += (i-mean)**2
+    return total_squared_difference
+
+def cal_standart_dev(lst):
+    variance = calculate_variance(lst)
+    std = (variance) ** 0.5
+    return std
+
+def calculate_median(lst):
+    sorted_list = sorted(lst)
+    length_list = len(sorted_list)
+    mid = length_list//2
+    if length_list % 2 != 0:
+       return sorted_list[mid]
+    else :
+        mid_minus_1 = mid-1
+        return (sorted_list[mid] + sorted_list[mid_minus_1] )/2
+print(statistics([]))
+
+# Write a function called greet which takes a default argument, name. 
+# If no argument is supplied it should print "Hello, Guest!", otherwise it should greet the person by name.
+
+def greet(name = "Guest"):
+    print(f"Hello, {name}")
+greet()
+greet("adam")
