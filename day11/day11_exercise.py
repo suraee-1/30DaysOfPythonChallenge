@@ -277,3 +277,79 @@ def greet(name = "Guest"):
     print(f"Hello, {name}")
 greet()
 greet("adam")
+
+#Create a function called show_args to take an arbitrary number of named arguments and print their names and values. 
+def show_args(**args):
+    for k , v in args.items():
+        print(f"Key : {k}, value : {v}")
+
+show_args(name="name",val="san", n="John" ,age =30,job_title = "Dev", Married = True)
+
+
+# level 3 exercises
+#Write a function called is_prime, which checks if a number is prime.
+def is_prime (num):
+   if num == 0 :
+       return False
+   if num == 1:
+       return None
+   for i in range(2,num):
+       if num%i ==0 :
+           return False
+   return True
+print(f"This number {is_prime(13)}")
+print(f"This number is prime : {is_prime(20)}")
+
+#Write a functions which checks if all items are unique in the list.
+def is_unique(lst):
+    unique_elements = set(lst)
+    if len(lst) == len(unique_elements):
+        return True
+    else :
+        return False
+    
+def is_unique_list(lst):
+    seen = {}
+    for i in lst:
+        if i in seen:
+            return False
+        seen[i] = True
+    return True
+x =is_unique_list([1,2,3,4,5])
+print(x)
+
+#Write a function which checks if all the items of the list are of the same data type.
+
+def type_same_list(lst):
+    type_of_item = type(lst[0])
+    for item in lst:
+        if type(item) != type_of_item:
+            return False
+    else :
+        return True
+print(type_same_list([1,23,3,3]))
+    
+# Write a function which check if provided variable is a valid python variable
+# what i need - function to check a variable is a valid python variable
+# if string is empty return false
+# the variable must follow rules - must contain alphanum , cannot start a number , 
+#   no spaces , cannot be keyword 
+# a function to input a string 
+# take the first character and check if it is a numberic value if true return false
+# check for iskeyword if true return false
+# check if string is a alphanum with _ as valid operator - dont know how to do it
+# take a for loop check if spaces exits in the string if yes return false
+import keyword
+def is_valid_python_variable(variable):
+    if variable == "":
+        return False
+    if  variable.isdigit():
+        return False
+    if  keyword.iskeyword(variable):
+        return False
+    if variable.isalphanum(variable) and variable ="":
+        return 
+    i
+    
+    
+print(f"Is valid variable : {is_valid_python_variable("if")}")
