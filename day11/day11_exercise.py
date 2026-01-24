@@ -341,15 +341,36 @@ print(type_same_list([1,23,3,3]))
 # take a for loop check if spaces exits in the string if yes return false
 import keyword
 def is_valid_python_variable(variable):
-    if variable == "":
+    if not variable :
         return False
-    if  variable.isdigit():
+    if not keyword.iskeyword(variable) and variable.isidentifier():
+        return True
+    else:
         return False
-    if  keyword.iskeyword(variable):
-        return False
-    if variable.isalphanum(variable) and variable ="":
-        return 
-    i
     
-    
-print(f"Is valid variable : {is_valid_python_variable("if")}")
+print(f"Is valid variable : {is_valid_python_variable("return")}")
+
+'''    Go to the data folder and access the countries-data.py file.
+
+    Create a function called the most_spoken_languages in the world. It should return 10 or 20 most spoken languages in the world in descending order
+    Create a function called the most_populated_countries. It should return 10 or 20 most populated countries in descending order.
+'''
+from data.countries_data import countries_dict
+from collections import Counter
+
+def most_spoken_lang(countries_dict):
+    languages = []
+
+    for countries in countries_dict:
+        languages.extend(countries["languages"])
+
+    count = Counter(languages)
+    return count.most_common(10)
+print(most_spoken_lang(countries_dict))
+
+
+# Find the 10 most populated countries in the world
+def ten_most_populated_countries(countries_dict):
+    top_10 = sorted(countries_dict,key = lambda x:x["population"],reverse=True)[:10]
+    return top_10
+print(ten_most_populated_countries(countries_dict))
