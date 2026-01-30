@@ -43,4 +43,27 @@ output:
 
 countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
 
-new_countries = [numbers[1] ==""for row in countries for row in numbers]
+result = []
+
+for item in countries :
+    country ,capital = item[0]
+    code = country[:3].upper()
+    result.append([country,code,capital])
+print(result)
+
+"""Change the following list to a list of dictionaries:
+
+countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
+output:
+[{'country': 'FINLAND', 'city': 'HELSINKI'},
+{'country': 'SWEDEN', 'city': 'STOCKHOLM'},
+{'country': 'NORWAY', 'city': 'OSLO'}]"""
+
+countries_list=[]
+countries_dict={}
+for item in countries:
+    country,city = item[0]
+    countries_dict["country"] = country
+    countries_dict["city"] = city
+    countries_list.append(countries_dict)
+print(countries_dict)
