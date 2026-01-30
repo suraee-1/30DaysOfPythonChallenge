@@ -42,28 +42,123 @@ output:
 [['FINLAND','FIN', 'HELSINKI'], ['SWEDEN', 'SWE', 'STOCKHOLM'], ['NORWAY', 'NOR', 'OSLO']]"""
 
 countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
-
 result = []
+for item in countries:
+   country , capital = item[0]
 
-for item in countries :
-    country ,capital = item[0]
-    code = country[:3].upper()
-    result.append([country,code,capital])
+   result.append([
+      country.upper(),
+      country[:3].upper(),
+      capital.upper()
+   ])
+
 print(result)
+new_list =[]
+for [[country,capital]] in countries:
+   new_list.append([
+      country.upper(),
+      country[:3].upper(),
+      capital.upper()
+   ])
+print(new_list)
+
+# list comprehension
+countries_with_capital = [[country.upper(),country[:3].upper(),capital.upper()] for [[country,capital]] in countries]
+
+# input data = [[(1, 2)], [(3, 4)], [(5, 6)]]
+# output = [[1, 2, 3], [3, 4, 7], [5, 6, 11]]
+
+numbers = [[(1,2)],[(3,4)],[(5,6)]]
+numbers_list=[]
+
+for item in numbers:
+    a,b=item[0]
+    numbers_list.append([
+       a,
+       b,
+       a+b
+    ])
+print(numbers_list)
+
+new_num_list=[]
+for [[x,y]] in numbers:
+   new_num_list.append([
+      x,y,x+y
+   ])
+print(new_num_list)
+
+# cities = [[('Paris','France')], [('Rome','Italy')], [('Berlin','Germany')]]
+# output :[['PARIS','FR','FRANCE'],
+ #['ROME','IT','ITALY'],
+ #['BERLIN','GE','GERMANY']]
+
+cities = [[("Paris","France")],[("Rome","Italy")],[("Berlin","Germany")]]
+cities_cap=[]
+for [[cap,coun]] in cities:
+    cities_cap.append([
+       cap.upper(),
+       coun[:2].upper(),
+       coun.upper(),
+       
+       
+    ])
+print(cities_cap)
+
+
 
 """Change the following list to a list of dictionaries:
-
 countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
 output:
 [{'country': 'FINLAND', 'city': 'HELSINKI'},
 {'country': 'SWEDEN', 'city': 'STOCKHOLM'},
-{'country': 'NORWAY', 'city': 'OSLO'}]"""
+{'country': 'NORWAY', 'city': 'OSLO'}]
+"""
+# list comprehension
+comprehension_dict = [{"country": country.upper(),"city" : city.upper()} for [[country,city]] in countries]
 
-countries_list=[]
-countries_dict={}
-for item in countries:
-    country,city = item[0]
-    countries_dict["country"] = country
-    countries_dict["city"] = city
-    countries_list.append(countries_dict)
-print(countries_dict)
+# 
+countries = [[('Finland','Helsinki')],
+             [("Sweden", 'Stockholm')],
+             [('Norway','Oslo')]]
+
+
+def country_capital(lst):
+   result = []
+   
+   for [[country,city]] in lst:
+      country_dict={}
+      country_dict["country"] = country.upper()
+      country_dict["city"] = city.upper()
+      result.append(country_dict)
+    
+   return result
+print(country_capital(countries))
+
+"""
+names = [[('Asabeneh', 'Yetayeh')], [('David', 'Smith')], [('Donald', 'Trump')], [('Bill', 'Gates')]]
+output
+['Asabeneh Yetaeyeh', 'David Smith', 'Donald Trump', 'Bill Gates']
+
+"""
+names = [[('Asabeneh', 'Yetayeh')], [('David', 'Smith')], [('Donald', 'Trump')], [('Bill', 'Gates')]]
+
+def firstname_and_last_names(lst):
+   result = []
+   for items in lst:
+      full_name = " ".join(items[0])
+      result.append(full_name)
+   return result
+print(firstname_and_last_names(names))
+
+
+# lets come back to list comprehensions
+fullname = [" ".join([firstname,lastname]) for [[firstname,lastname]] in names ]
+print(fullname)
+print(countries_with_capital)
+
+# Write a lambda function which can solve a slope or y-intercept of linear functions.
+
+y_intercept = lambda x,y,m : y-m*x
+print(y_intercept(2,13,3))
+
+print(comprehension_dict)
